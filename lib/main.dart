@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/sign_in_page.dart';
-import 'screens/existing_customer_page.dart';
+import 'screens/schedule_puja_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+        // fontFamily: poppins,
       ),
       home: const SignInPage(),
     );

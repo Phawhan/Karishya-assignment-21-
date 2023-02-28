@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:karishya/constants/constantStyle.dart';
 import 'package:karishya/constants/constantVariables.dart';
-import 'package:karishya/screens/existing_customer_page.dart';
+import 'package:karishya/screens/schedule_puja_page.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -56,16 +56,15 @@ class _SignInPageState extends State<SignInPage> {
                     margin: const EdgeInsets.only(top: 20),
                     width: double.infinity,
                     height: 55,
-                    color: const Color.fromARGB(255, 89, 14, 108),
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: widgetColor),
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    ExistingCustomer()));
+                                builder: (context) => const SchedulePuja()));
                       },
-                      style: ButtonStyle(),
                       child: const Text(
                         "Submit",
                         style: TextStyle(
@@ -78,10 +77,10 @@ class _SignInPageState extends State<SignInPage> {
                   const Padding(
                     padding: EdgeInsets.only(top: 30),
                     child: Text(
-                      "Don’t have an account? SIGN UP",
+                      "Do not have an account? SIGN UP",
                       style: TextStyle(
                           fontSize: 20,
-                          color: Color.fromARGB(255, 74, 6, 87),
+                          color: Colors.black,
                           fontWeight: FontWeight.w500),
                     ),
                   )
