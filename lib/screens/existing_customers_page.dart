@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:karishya/widgets/bottomNavigation.dart';
+import 'package:karishya/widgets/carousel.dart';
 import 'package:karishya/widgets/topNavigation.dart';
 import 'package:karishya/widgets/customerCard.dart';
 import 'package:karishya/constants/constantVariables.dart';
@@ -51,17 +52,23 @@ class _CustomerListState extends State<CustomerList> {
             end: Alignment.bottomCenter,
             colors: [Colors.white, Color.fromARGB(255, 247, 240, 177)],
           )),
-      child: ListView.builder(
-        itemCount: listItems.length,
-        itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            child: CustomerCard(
-                customerName: listItems[index][0],
-                isChecked: listItems[index][1],
-                onChanged: (value) => checkBoxTap(value, index)),
-          );
+      child: GestureDetector(
+        onTap: () => {
+          Navigator.push(context,
+              MaterialPageRoute(builder: ((context) => const Carousel())))
         },
+        child: ListView.builder(
+          itemCount: listItems.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+              child: CustomerCard(
+                  customerName: listItems[index][0],
+                  isChecked: listItems[index][1],
+                  onChanged: (value) => checkBoxTap(value, index)),
+            );
+          },
+        ),
       ),
     );
   }
